@@ -1,0 +1,140 @@
+# Solar Charger
+
+Protótipo experimental de um carregador solar com saída USB, desenvolvido para fins de estudo e aprendizado prático.
+
+> Este projeto não foi desenvolvido como produto comercial nem como trabalho científico.
+
+## Sobre o projeto
+
+O Solar Charger surgiu da ideia de construir um carregador alimentado por energia solar utilizando componentes disponíveis no mercado brasileiro.
+
+O painel fotovoltaico fornece energia ao circuito, enquanto um módulo LM2596 reduz e regula a tensão para aproximadamente 5 V. A saída é disponibilizada por meio de um conector USB tipo A.
+
+O projeto não utiliza microcontroladores, firmware ou qualquer tipo de programação.
+
+## Componentes utilizados
+
+- Painel solar fotovoltaico Ztroon ZTP-030M;
+- Módulo conversor de tensão LM2596;
+- Capacitor eletrolítico para filtragem da saída do painel;
+- Chave gangorra liga/desliga;
+- LED indicador de alimentação;
+- Conector USB tipo A para saída de tensão;
+- Placa eletrônica;
+- Caixa de proteção desenvolvida para o projeto.
+
+## Funcionamento
+
+O painel fotovoltaico converte a luz solar em energia elétrica. A tensão gerada é conduzida ao módulo LM2596, responsável por ajustá-la para aproximadamente 5 V.
+
+O capacitor eletrolítico auxilia na filtragem da alimentação, enquanto o LED indica quando o circuito está energizado. A chave gangorra permite ligar ou desligar a saída do circuito.
+
+A energia regulada é disponibilizada no conector USB tipo A para a conexão de dispositivos compatíveis.
+
+Fluxo simplificado:
+
+```text
+Painel fotovoltaico
+        |
+        v
+Capacitor de filtro
+        |
+        v
+Conversor LM2596
+        |
+        v
+Chave liga/desliga e LED
+        |
+        v
+Saída USB tipo A - 5 V
+```
+
+## Arquivos do projeto
+
+- `Circuito/solar rev05`: arquivos do esquema elétrico e da placa desenvolvidos no KiCad;
+- `Design Caixa/caixa rev06.dwg`: desenho da caixa no formato DWG;
+- `Design Caixa/caixa rev06.dxf`: desenho da caixa no formato DXF.
+
+## Desenvolvimento e montagem
+
+A caixa do projeto foi inicialmente desenvolvida por **Yuri Silva Cruz Storino** e posteriormente modificada por **João Lucas Pedrosa de Siqueira Parada**, com o objetivo de melhorar os encaixes dos componentes.
+
+A fabricação da placa, a soldagem dos componentes e a montagem do protótipo foram realizadas por **João Lucas Pedrosa de Siqueira Parada**.
+
+Os testes foram realizados em conjunto por **Yuri Silva Cruz Storino** e **João Lucas Pedrosa de Siqueira Parada**.
+
+## Período de desenvolvimento
+
+- **Início:** 26 de novembro de 2024;
+- **Conclusão:** 9 de setembro de 2026;
+- **Tempo aproximado de execução:** 20 horas, após a obtenção de todos os componentes.
+
+## Histórico do desenvolvimento
+
+### 18 de dezembro de 2025
+
+A placa foi fabricada, porém não funcionou como esperado. Quando o circuito passou a consumir corrente, houve redução da tensão. Para evitar possíveis danos ao celular e ao painel, decidiu-se utilizar um módulo conversor próprio para a regulagem da tensão.
+
+### 5 de fevereiro de 2026
+
+Foi adquirido um conversor DC-DC LM2596, capaz de receber uma tensão mais alta e fornecer uma saída regulada. Foram planejados testes com saída de 5 V e um motor, acompanhados por medições de tensão e corrente, para avaliar sua utilização na regulagem do circuito.
+
+## Testes e resultados
+
+O protótipo foi testado em um dia ensolarado utilizando um smartphone Motorola Moto G84 Plus.
+
+O aparelho permaneceu conectado ao carregador durante aproximadamente cinco minutos. Nesse período, não foi observado aumento no nível de carga da bateria.
+
+Esse resultado indica que, nas condições do teste, o sistema não forneceu energia suficiente para produzir um aumento perceptível na carga do aparelho. Não foram registradas medições detalhadas de tensão, corrente ou potência durante o ensaio.
+
+## Limitações conhecidas
+
+- O protótipo não conseguiu aumentar a carga do smartphone durante o teste realizado;
+- A geração de energia depende diretamente das condições de iluminação;
+- O LM2596 é um conversor redutor de tensão e não consegue elevar a tensão quando a saída do painel fica abaixo do valor necessário;
+- Não há armazenamento de energia em bateria interna;
+- Não foram realizadas medições detalhadas de eficiência, potência ou estabilidade da saída;
+- O circuito não implementa protocolos modernos de carregamento rápido;
+- O projeto possui finalidade exclusivamente educacional e experimental.
+
+## Possíveis melhorias
+
+- Medir a tensão e a corrente produzidas pelo painel em diferentes condições;
+- Registrar a tensão e a corrente na entrada e na saída do LM2596;
+- Verificar a estabilidade da saída de 5 V sob carga;
+- Avaliar a utilização de um painel com maior potência;
+- Utilizar um controlador solar mais adequado à aplicação;
+- Adicionar uma bateria interna e um circuito de gerenciamento de carga;
+- Implementar proteção contra curto-circuito, sobrecorrente e inversão de polaridade;
+- Realizar testes com diferentes dispositivos e cabos USB;
+- Documentar o esquema elétrico e o processo de montagem.
+
+## Segurança
+
+Este é um protótipo experimental. Antes de conectar qualquer equipamento, é recomendável verificar a tensão de saída com um multímetro.
+
+Uma tensão incorreta ou instável pode danificar o dispositivo conectado. Também devem ser observados a polaridade do capacitor eletrolítico, o isolamento das conexões e a possibilidade de aquecimento dos componentes.
+
+## Autores e colaboradores
+
+### Yuri Silva Cruz Storino - [@storinoz](https://github.com/storinoz)
+
+- Concepção do projeto;
+- Desenvolvimento inicial da caixa;
+- Realização dos testes.
+
+### João Lucas Pedrosa de Siqueira Parada
+
+- Ajustes e modificações na caixa;
+- Fabricação da placa;
+- Soldagem dos componentes;
+- Montagem do protótipo;
+- Realização dos testes.
+
+## Licença
+
+Este projeto de hardware é disponibilizado sob a licença [CERN Open Hardware Licence Version 2 - Permissive](LICENSE).
+
+Você pode usar, estudar, modificar, fabricar e distribuir este projeto, inclusive para fins comerciais, desde que sejam preservados os avisos de autoria e licença e que as modificações realizadas sejam identificadas.
+
+O projeto é fornecido sem qualquer garantia. Os autores não se responsabilizam por danos materiais, elétricos ou pessoais decorrentes de sua construção ou utilização.
